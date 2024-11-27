@@ -23,8 +23,6 @@
 // uncomment next line to use class GFX of library GFX_Root instead of Adafruit_GFX
 //#include <GFX.h>
 
-#define DEG2RAD 0.0174532925
-
 #define USE_HSPI_FOR_EPD
 
 #include <GxEPD2_3C.h>
@@ -117,11 +115,11 @@ void shadedThickRoundRect(int xval, int yval, int w, int h, int r, uint16_t colo
     }
   }
   drawThickRoundRect(xval, yval, w, h, r, color, thick);
-};
+}
 
 void fillArc(int x, int y, int start_angle, int seg_count, int rx, int ry, int w, unsigned int colour)
 {
-
+  float DEG2RAD = 0.0174532925;
   int seg = 1; // Segments are 3 degrees wide = 120 segments for 360 degrees
   int inc = 1; // Draw segments every 3 degrees, increase to 6 for segmented ring
 
